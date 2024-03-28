@@ -1,48 +1,45 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-	<h1>Testing a Landing Page</h1>
-    <h2>FullStackRacc's Projects</h2>
-    <h3>sorted alphabetically at the moment (this site is also under construction)</h3>
-    <hr />
-    <ul>
-       <li><a href="Projects/anime-quotes-api">Anime Quotes API</li>
-       <li><a href="Projects/Balance_Sheet">Balance Sheet</a></li>
-       <li><a href="Projects/Building_A_Ferris_Wheel">Ferris Wheel</a></li>
-       <li><a href="Projects/Building_A_Magazine">Magazine Layout</a></li>
-       <li><a href="Projects/Building_A_Penguin">CSS Penguin</a></li> 
-       <li><a href="Projects/Building_A_Piano">CSS Piano</a></li> 
-       <li><a href="Projects/Building_A_Quiz">Quiz Form</a></li> 
-       <li><a href="Projects/Cafe_Menu">Cafe Menu</a></li> 
-       <li><a href="Projects/Calculator">Calculator</a></li> 
-       <li><a href="Projects/Calorie_Counter">Calorie Counter</a></li> 
-       <li><a href="Projects/CatPhotoApp">CatPhotoApp</a></li> 
-       <li><a href="Projects/City_Skyline">CSS City Skyline</a></li> 
-       <li><a href="Projects/Colored_Markers">CSS Colored Markers</a></li> 
-       <li><a href="Projects/Date_Formatter">Date Formatter</a></li>
-       <li><a href="Projects/Football_Team_Cards">Football Team Cards</a></li>
-       <li><a href="Projects/glitch-prime-website">My Favorite Number (Website)</a></li> 
-       <li><a href="Projects/Javascript_Drum_Kit">Javascript Drum Kit</a></li> 
-       <li><a href="Projects/Javascript_RPG">Basic RPG in Javascript</a></li>
-       <li><a href="Projects/Music_Player">Music Player</a></li>
-       <li><a href="Projects/Nutrition_Label">Nutrition Label</a></li> 
-       <li><a href="Projects/Palindrome_Checker">Palindrome Checker</a></li>
-       <li><a href="Projects/Photo_Gallery">Photo Gallery</a></li> 
-       <li><a href="Projects/Picasso_Painting">CSS Picasso Painting</a></li> 
-       <li><a href="Projects/Podoromo_Timer_Website">Podoromo Timer</a></li> 
-       <li><a href="Projects/Power_Rangers_Fighting_Game_Character_Select">Power Rangers Fighting Game Character</a></li>
-       <li><a href="Projects/random-useless-facts-api">Random Useless Facts API</a></li>
-       <li><a href="Projects/Registration_Form">Registration Form</a></li>
-       <li><a href="Projects/Rothko_Painting">Rothko Painting</a></li>
-       <li><a href="Projects/temperature-converter">Temperature Converter</a></li>
-       <li><a href="Projects/xkcd-api">XKCD API</a></li>
-    </ul> 
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Is It Daylight Savings Time?</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+  <style>
+
+  </style>
+</head>
+
+<body>
+    <div id="yes-or-no" class="container"></div>
+  <script>
+    function hasDST(date = new Date()) {
+    const january = new Date(
+        date.getFullYear(),
+        0,
+        1,
+    ).getTimezoneOffset();
+    const july = new Date(
+        date.getFullYear(),
+        6,
+        1,
+    ).getTimezoneOffset();
+
+    return Math.max(january, july) !== date.getTimezoneOffset();
+    }
+
+    const yesOrNoDiv = document.getElementById("yes-or-no");
+    const changeAnswer = () => {
+        if (hasDST(new Date())) {
+            yesOrNoDiv.innerHTML = `<img src="raccoons/yes.jpg" />`
+        } else {
+            yesOrNoDiv.innerHTML = `<img src="raccoons/no.jpg" />`
+        }
+    }
+
+    changeAnswer();
+  </script>
+</body>
+
 </html>
